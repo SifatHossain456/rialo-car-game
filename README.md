@@ -1,70 +1,79 @@
 # Rialo — Car Avoid (Logo + Shield)
 
-**একটি একদম সহজ, single-file HTML গেম** — যেখানে আপনি গাড়ি (লোগো) বামে-ডানে সরিয়ে উপরে থেকে আসা বাধা এড়িয়ে চলবেন। লোগো-কয়েন ধরলে **Shield power-up** অন হবে (৬ সেকেন্ড invincible), HUD-এ টাইমডাউন দেখা যাবে।
+A **simple single-file HTML game** where you drive a car (logo) left and right to avoid obstacles falling from the top.  
+Collect the **logo-coin** to activate a **Shield power-up** (6 seconds of invincibility) with a visual ring and countdown HUD.
 
-> 🔗 **Live (GitHub Pages)**: Settings → Pages → Branch: `main` → Save (ডেপ্লয় হলে লিঙ্ক হবে `https://<username>.github.io/<repo>/`)
+> 🔗 **Live (GitHub Pages)**: Go to **Settings → Pages → Branch:** `main` → Save.  
+> Once deployed, your game will be available at:
+> ```
+> https://<username>.github.io/<repo>/
+> ```
 
 ---
 
 ## 🎮 Features
-- **Single file**: পুরো গেমটা `index.html`-এর মধ্যে (HTML+CSS+JS)।
-- **Logo integration**: গেম, মেনু, HUD এবং power-up-এ কাস্টম লোগো ব্যবহার।
-- **Shield power-up**: লোগো-কয়েন ধরলে ৬ সেকেন্ডের শিল্ড (ভিজ্যুয়াল রিং + HUD কাউন্টডাউন)।
-- **Difficulty ramp**: সময়ের সাথে গতি ও স্পন ফ্রিকোয়েন্সি বেড়ে যায়।
-- **Best score**: ব্রাউজারের `localStorage`-এ সেভ থাকে।
-- **Mobile friendly**: টাচ বোতামসহ।
+- **Single file**: Entire game inside `index.html` (HTML + CSS + JS)
+- **Logo integration**: Your logo appears in the menu, player car, HUD, and shield coin.
+- **Shield power-up**: Collect logo coin for a 6-second invincibility shield (with ring + countdown).
+- **Dynamic difficulty**: Speed and obstacle frequency increase over time.
+- **Best score tracking**: Saved in `localStorage`.
+- **Mobile friendly**: Includes on-screen touch buttons.
 
 ---
 
 ## ⌨️ Controls
-- **Start / Pause**: বোতাম থেকে বা **Enter**
-- **Move**: **← →** বা **A / D**
-- **Restart**: **R**
+- **Start / Pause** — Button or **Enter** key  
+- **Move** — **← →** or **A / D**  
+- **Restart** — **R**
 
 ---
 
 ## 🛠️ Run Locally
-1. এই রিপো থেকে `index.html` ডাউনলোড/ক্লোন করুন।
-2. ফাইলটায় **ডাবল-ক্লিক** করলেই ব্রাউজারে গেম চলবে।
-   - বিকল্প: টার্মিনাল থেকে ছোট HTTP সার্ভার চালাতে পারেন:
-     ```bash
-     # Python 3
-     python -m http.server 8000
-     # তারপর ব্রাউজারে খুলুন: http://localhost:8000/index.html
-     ```
+1. Download or clone this repository.
+2. Double-click `index.html` to open the game in your browser.  
+   Or use a simple local server:
+   ```bash
+   # Python 3
+   python -m http.server 8000
+   # Then open http://localhost:8000/index.html
+   ```
 
 ---
 
 ## 🚀 Deploy (GitHub Pages)
-1. এই রিপোজিটরিতে `index.html` commit/push করুন।
-2. **Settings → Pages → Branch:** `main` নির্বাচন করুন, **Save**।
-3. কিছুক্ষণের মধ্যে লাইভ লিঙ্ক হবে: `https://<username>.github.io/<repo>/`
+1. Commit and push your `index.html` file to this repo.  
+2. Go to **Settings → Pages → Branch:** `main`, then click **Save**.  
+3. After a few minutes, your live game will appear at:
+   ```
+   https://<username>.github.io/<repo>/
+   ```
 
 ---
 
 ## 🗂️ Project Structure
 ```
 repo/
-└─ index.html   # গেমের সম্পূর্ণ সোর্স (HTML+CSS+JS)
+└─ index.html   # Full game source (HTML + CSS + JS)
 ```
-> নোট: এই ভার্সনে লোগো **embedded data URL** হিসেবে যুক্ত (index.html-এর ভেতরেই), আলাদা ফাইল লাগবে না।
+> Note: This version includes the logo as an **embedded data URL**, so you don’t need any separate image files.
 
 ---
 
 ## 🧩 Customization
-- **লোগো বদলাতে** চাইলে `index.html`-এ `logo.src = "data:image/...base64,..."` অংশটি নতুন data-URL বা ফাইলপথে বদলে দিন।
-- **লেনে সংখ্যা**: `lanes` ভ্যারিয়েবল (ডিফল্ট `3`)।
-- **শিল্ড সময়**: `activateShield(6000)` → মিলিসেকেন্ডে সময়।
-- **স্পিড/ডিফিকাল্টি**: `speed`, `diffMult` ও `spawnEvery` লজিক।
-- **কালার থিম**: CSS `:root` ভ্যারিয়েবলগুলো (`--bg`, `--road`, `--lane`, `--accent`, `--good` ইত্যাদি)।
+- **Change logo** — replace the data URL or edit `logo.src` inside `index.html`
+- **Number of lanes** — change the `lanes` variable (default = 3)
+- **Shield duration** — adjust in `activateShield(6000)` (milliseconds)
+- **Speed/difficulty** — tweak `speed`, `diffMult`, and `spawnEvery`
+- **Color theme** — edit CSS `:root` variables (`--bg`, `--road`, `--lane`, `--accent`, `--good`, etc.)
 
 ---
 
 ## 🤝 Contributions
-PR স্বাগত! বাগ/আইডিয়ার জন্য Issue খুলুন।
+Pull requests are welcome!  
+Open an Issue for bugs, ideas, or improvements.
 
 ---
 
 ## 📜 License
-MIT (নিজ দায়িত্বে ব্যবহার করুন; এম্বেড করা লোগোর মালিকানা/ব্যবহারের দায় ব্যবহারকারীর)।
-
+**MIT License** — Use freely at your own risk.  
+(Logo ownership and usage rights remain with the creator.)
