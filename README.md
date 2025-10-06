@@ -6,7 +6,7 @@ Collect the **logo-coin** to activate a **Shield power-up** (6 seconds of invinc
 > 🔗 **Live (GitHub Pages)**: Go to **Settings → Pages → Branch:** `main` → Save.  
 > Once deployed, your game will be available at:
 > ```
-> https://<username>.github.io/<repo>/
+> https://<SifatHossain456>.github.io/<repo>/
 > ```
 
 ---
